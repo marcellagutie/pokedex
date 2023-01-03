@@ -1,35 +1,37 @@
-import { useTheme } from 'styled-components'
-import { Link } from 'react-router-dom'
-import { FaSearch } from 'react-icons/fa'
+import { useTheme } from 'styled-components';
+import { Link } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa';
 
 import {
-    Wrapper, 
-    SearchInput, 
-    SearchButton
+    Wrapper,
+    FilterInput,
+    FilterButton
 } from './Filter.styled'
 interface FilterProps {
-    handleInputChange: (value: string) => void
-    value: string
+    handleInputChange: (value: string) => void;
+    value: string;
 }
 
-export default function Filter(props: FilterProps) {
-    const theme = useTheme()
+const Filter = (props: FilterProps) => {
+    const theme = useTheme();
     return(
         <form>
             <Wrapper>
-                <SearchInput
+                <FilterInput
                     type="text"
-                    id="searchPokemonByName"
+                    id="FilterPokemonByName"
                     placeholder='Digite o nome ou o identificador'
                     value={props.value}
                     onChange={e => props.handleInputChange(e.target.value)}
                 />
                 <Link to={`/${props.value}`}>
-                    <SearchButton>
+                    <FilterButton>
                         <FaSearch color={theme.colors.backgroundCard} fontSize={25} />
-                    </SearchButton>
+                    </FilterButton>
                 </Link>
             </Wrapper>
         </form>
     )
 }
+
+export default Filter;
