@@ -7,6 +7,7 @@ export const dark = {
 
         background: '#121212',
         backgroundCard: '#373737',
+        gray: '#616161',
         text: '#DFDFDF',
         subtext: '#9E9E9E'
     }
@@ -20,6 +21,7 @@ export const light = {
 
         background: '#fff',
         backgroundCard: '#F2F2F2',
+        gray: '#616161',
         text: '#313131',
         subtext: '#919191'
     }

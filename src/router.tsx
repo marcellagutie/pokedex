@@ -1,19 +1,26 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function Router() {
-  return (
-    <div className="wrapper">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/:query?" element={<Home />} />
-          <Route path="/detail/:name?" element={<Detail />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+import App from "./App";
+import Detail from "./pages/Details/Detail";
+import Home from "./pages/Home/Home";
+
+
+const Router = () => {
+    const queryClient = new QueryClient();
+
+    return (
+        <BrowserRouter>
+            <QueryClientProvider client={queryClient}>
+                <Routes>
+                    <Route path="/" element={<App />}>
+                        <Route index element={<Home />} />
+                        <Route path=":pokemonName" element={<Detail />} />
+                    </Route>
+                </Routes>
+            </QueryClientProvider>
+        </BrowserRouter>
+    )
 }
 
-export default Router;
+export default Router

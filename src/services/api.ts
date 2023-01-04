@@ -1,6 +1,7 @@
 import axios from 'axios'
+import { Info } from '../utils/types/info.type'
 
-export default function useApi() {
+export default function api() {
 
     function formatDescription(description: string) {
         description = description.toLowerCase()
@@ -28,7 +29,7 @@ export default function useApi() {
             })
         }
     }
-    async function searchPokemon(pokemonName: string) {
+    async function pokeFilter(pokemonName: string) {
         const pokemonInfo = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
             .then(async (response) => {
                 response.data.weaknesses = []
@@ -64,7 +65,7 @@ export default function useApi() {
                         .finally(() => {
                             response.data.removeWeak.map((remove: string) => {
                                 const conflictType = response.data.weaknesses.indexOf(remove)
-                                if(conflictType != -1) {
+                                if(conflictType !== -1) {
                                     response.data.weaknesses.splice(conflictType, 1)
                                 }
                             })
@@ -74,12 +75,10 @@ export default function useApi() {
             })
         const pokemonSpecies = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`)
             .then(async (response) => {
-                // Description
                 response.data.description = []
                 response.data.flavor_text_entries.forEach((text: any) => { pickDescriptions(text, response) })
                 return response.data
             })
-            
         const response = {
             info:  {
                 id: pokemonInfo.id,
@@ -94,7 +93,7 @@ export default function useApi() {
             },
             description: pokemonSpecies.description,
         }
-        return await response
+        return response
     }
     async function infinityScroll(pageParam: number) {
         let response: any = []
@@ -105,7 +104,7 @@ export default function useApi() {
         return response
     }
     return {
-        searchPokemon,
+        pokeFilter,
         formatVersion,
         infinityScroll
     }

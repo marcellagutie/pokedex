@@ -10,6 +10,7 @@ declare module 'styled-components' {
 
             background: string
             backgroundCard: string
+            gray: string
             text: string
             subtext: string
         }
