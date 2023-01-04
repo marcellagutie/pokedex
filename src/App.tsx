@@ -12,6 +12,8 @@ import {
     Wrapper,
     Header
 } from './App.styled'
+import Logo from './assets/images/logo.png'
+
 
 export default function App() {
     const [theme, setTheme] = useState(() => {
@@ -27,7 +29,7 @@ export default function App() {
             <Wrapper>
                 <GlobalStyles />
                 <Header>
-                    <Link to="/"><Title>Pokedex</Title></Link>
+                    <Link to="/"><img src={Logo}/></Link>
                     <ThemeSwitcher onClick={() => toggleTheme()}>
                         {theme.title === "dark" ? (
                             <FaSun color={theme.colors.primary} fontSize={30} />
