@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components"
-import React from 'react'
+import React, {useState} from 'react'
 
 import { Outlet, Link } from "react-router-dom";
 import { FaSun, FaMoon } from 'react-icons/fa'
@@ -14,7 +14,7 @@ import {
 } from './App.styled'
 
 export default function App() {
-    const [theme, setTheme] = React.useState(() => {
+    const [theme, setTheme] = useState(() => {
         const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         return isDarkMode ? dark : light 
     })

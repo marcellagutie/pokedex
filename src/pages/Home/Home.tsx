@@ -1,6 +1,5 @@
 import {useEffect, Fragment} from 'react';
 import { useInfiniteQuery } from 'react-query';
-import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 
 import PokemonCard from '../../components/PokeCard';
@@ -35,9 +34,7 @@ const Home = () => {
                 <Fragment key={`pokemon${page[0].id}`}>
                 {page.map((pokemon: any) => {
                     return (
-                        <Link to={pokemon.name} key={pokemon.id.toString()}>
-                            <PokemonCard info={pokemon}/>
-                        </Link>
+                        <PokemonCard info={pokemon}/>
                     )
                 })}
                 </Fragment>

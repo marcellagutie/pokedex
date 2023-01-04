@@ -26,7 +26,12 @@ export const Describe = styled.div`
     background-color: ${({theme}) => theme.colors.background};
     padding: .5em;
 `
-
+export const FavoriteWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+`
 export const Title = styled.span`
     font-size: 1.45em;
     margin-bottom: 5px;
