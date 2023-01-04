@@ -1,11 +1,11 @@
-import useHandles from '../../hooks/useHandles'
+import useHandle from '../../hooks/useHandle';
 import {
     DescriptionWrapper,
     DescriptionText,
     LabelSelect,
     Select,
     SelectWrapper
-} from './PokeDescription.styled'
+} from './PokeDescription.styled';
 
 interface DescriptionInfo {
     language: string;
@@ -21,7 +21,7 @@ const PokeDescription = ({ info }: DescriptionProps) => {
     const {
         gameDescription,
         handleGameDescriptionChange
-    } = useHandles()
+    } = useHandle();
 
     return (
         <DescriptionWrapper>
@@ -36,9 +36,8 @@ const PokeDescription = ({ info }: DescriptionProps) => {
             <DescriptionText>
                 { info[gameDescription].text  }
             </DescriptionText>
-            
         </DescriptionWrapper>
-    )
+    );
 }
 
-export default PokeDescription
+export default PokeDescription;

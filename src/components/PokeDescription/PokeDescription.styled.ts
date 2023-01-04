@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const DescriptionWrapper = styled.div`
     display: flex;
@@ -6,8 +6,8 @@ export const DescriptionWrapper = styled.div`
     margin: 1em 0;
 `
 export const SelectWrapper = styled.div`
-display: flex;
-flex-direction: row;
+    display: flex;
+    flex-direction: row;
 `
 export const DescriptionText = styled.span`
     font-weight: 500;
@@ -23,20 +23,8 @@ export const LabelSelect = styled.label`
 export const Select = styled.select`
     text-transform: capitalize;
     margin: 0px 0px 5px 10px;
-    background-color: #616161;
+    background-color: ${({theme}) => theme.colors.gray};
     color: white;
-    font-size: 1.2em;
+    font-size: 15px;
     max-width: 150px;
-    &::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: #616161;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-        background-color: #313131;
-        border-radius: 20px;
-    }
 `
