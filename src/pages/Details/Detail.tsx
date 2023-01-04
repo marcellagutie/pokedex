@@ -40,7 +40,7 @@ const Detail = () => {
                             <Types>
                                 <SubTitle>Tipo</SubTitle>
                                 {pokemon?.info.types.map((type: Type) => {
-                                    return <PokeType key={type.type.name} type={type.type.name}/>
+                                    return <PokeType key={type.type.name} type={type.type.name} detail/>
                                 })}
                             </Types>
                             <Types>

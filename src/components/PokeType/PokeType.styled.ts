@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 interface TypeCellProps {
     backgroundColor?: string
-    weak?: boolean
+    detail?: boolean
 }
 
 export const TypeCell = styled.span<TypeCellProps>`
     background: ${props => props.backgroundColor || '#9DA0AA'};
     color: 'white';
-    margin: ${props => props.weak ? '5px 10px' : '0px 10px' };
+    margin: ${props => props.detail ? '1% 0 0 1%' : '0 2% 0 0'};
     line-height:  '32px';
     border-radius: 3px;
-    width: 39%;
+    width: 100%;
     max-width:  '140px';
     text-align: center;
     font-weight: '600';

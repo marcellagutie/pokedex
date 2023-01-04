@@ -10,7 +10,7 @@ const PokeWeaknesses = (props: WeaknessesProps) => {
     return (
         <Wrapper>
             {props.info.map((type: string) => {
-                return <Type key={`${type}Weak`} type={type} weak/>
+                return <Type key={`${type}Weak`} type={type} detail/>
             })}
         </Wrapper>
     )

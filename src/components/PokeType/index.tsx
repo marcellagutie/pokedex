@@ -2,7 +2,7 @@ import { TypeCell } from './PokeType.styled';
 
 interface TypeProps {
     type: string;
-    weak?: boolean;
+    detail?: boolean;
 }
 
 export default function PokeType(props: TypeProps) {
@@ -28,7 +28,7 @@ export default function PokeType(props: TypeProps) {
     }[props.type];
 
     return(
-        <TypeCell weak={props.weak} backgroundColor={backgroundColor}>
+        <TypeCell detail={props.detail} backgroundColor={backgroundColor}>
             {props.type}
         </TypeCell>
     );
