@@ -1,13 +1,13 @@
 import styled from "styled-components"
 
-export const PokemonWrapper = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 5vw;
 `
 
-export const TypesDiv = styled.div`
+export const Types = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -65,22 +65,10 @@ export const BackButton = styled.button`
 export const Select = styled.select`
     text-transform: capitalize;
     margin-bottom: .5em;
-    background-color: #616161;
+    background-color: ${({theme}) => theme.colors.gray};
     color: white;
     font-size: 1.2em;
     max-width: 150px;
-    &::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: #616161;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-        background-color: #313131;
-        border-radius: 20px;
-    }
 `
 
 export const Title = styled.h2`
