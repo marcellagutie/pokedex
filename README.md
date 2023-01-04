@@ -1,4 +1,4 @@
-# Hello! Welcome to my POKEDEX <♡ 
+# Hello! Welcome to my POKEDEX ♡ 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
