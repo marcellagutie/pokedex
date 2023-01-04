@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Info } from '../utils/types/info.type'
+import { FlavorTextEntry } from '../utils/types/res.type'
 
 export default function api() {
 
@@ -19,7 +19,7 @@ export default function api() {
         let response = version.replaceAll('-', ' ')
         return response
     }
-    function pickDescriptions(text: any, response: any) {
+    function pickDescriptions(text: FlavorTextEntry, response: any) {
         if(text.language.name === 'en') {
             response.data.description.push({
                 text: formatDescription(text.flavor_text),
@@ -76,7 +76,7 @@ export default function api() {
         const pokemonSpecies = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`)
             .then(async (response) => {
                 response.data.description = []
-                response.data.flavor_text_entries.forEach((text: any) => { pickDescriptions(text, response) })
+                response.data.flavor_text_entries.forEach((text: FlavorTextEntry) => { pickDescriptions(text, response) })
                 return response.data
             })
         const response = {

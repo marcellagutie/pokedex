@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import { Link, useParams } from 'react-router-dom';
 
-import Type from '../../components/PokeType';
+import PokeType from '../../components/PokeType';
 import Loading from '../../components/Loading';
 import Stats from '../../components/PokeStats';
 import Description from '../../components/PokeDescription';
@@ -9,6 +9,7 @@ import PokeInfo from '../../components/PokeInfo';
 import Weaknesses from '../../components/PokeWeaknesses';
 
 import api from '../../services/api';
+import { Type } from '../../utils/types/info.type'
 
 import {
     Wrapper,
@@ -38,8 +39,8 @@ const Detail = () => {
                             <img src={sprite} alt={`${pokemon?.info.name}`} />
                             <Types>
                                 <SubTitle>Tipo</SubTitle>
-                                {pokemon?.info.types.map((type: any) => {
-                                    return <Type key={type.type.name} type={type.type.name}/>
+                                {pokemon?.info.types.map((type: Type) => {
+                                    return <PokeType key={type.type.name} type={type.type.name}/>
                                 })}
                             </Types>
                             <Types>
